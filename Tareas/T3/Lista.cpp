@@ -42,28 +42,41 @@ int Lista::insert(Nodo *n){
 	return 0;
 }
 
-int Lista::search(std::string bNombre){
+Nodo *Lista::search(int bInt){
     if(root!=NULL){
         Nodo *aux = root;
         while(aux!=last){
-            if(aux->getNombre()==bNombre){
-                return aux->getId();
+            if(aux->getId()==bInt){
+                return aux;
             }
             aux= aux->getNext();
         }
         if (aux==last){
-             if(aux->getNombre()==bNombre){
-                return aux->getId();
+             if(aux->getId()==bInt){
+                return aux;
             }
 
         }
     }
     
-    return 0;
+    return NULL;
+
+}
+
+void Lista::eliminar(Nodo *d){
+     if(root!=NULL){
+        Nodo *aux = root;
+        while(aux->getNext()!=d){
+            aux= aux->getNext();
+        }
+        if (aux->getNext()==d){
+            aux->setNext(d->getNext());
+        }
+    }
 
 }
 
 int main(){
-   cout<<"Ulysses gay"; 
+   cout <<"Prueba"; 
    return 0;
 }

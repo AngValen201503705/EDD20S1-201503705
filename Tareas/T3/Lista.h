@@ -14,7 +14,8 @@ public:
 	void setRoot(Nodo *n);
     void setLast(Nodo *n);
 	int insert(Nodo *n);
-    int search(std::string bNombre);
+    Nodo *search(int id);
+    void eliminar(Nodo *d);
 	
 };
 
